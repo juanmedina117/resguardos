@@ -1,0 +1,74 @@
+body,html{
+    height: 100%;
+    width: 100%;
+}
+
+.main-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container > .login,
+.main-container > .hero-body{
+    height: auto;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+}
+
+.fallas{
+    width: 100%;
+}
+
+.fallas > .fallas__titulos{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.fallas__titulos >{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.fallas__titulos > h1{
+      font-weight: bold!important;
+      font-weight: 600!important;
+      font-size: 30px;
+
+}
+.fallas__vehiculos{
+  
+}
+
+.textArea{
+    width: 100%;
+}
+
+.inputs_file{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.content_input{
+    display: flex !important;
+    width: 100% !important;
+    justify-content: center !important;
+}
+
+ input[type="file"]{
+    margin-top: 10px;
+ }
+
+.enviar{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
