@@ -29,18 +29,17 @@
 
 	<p class="has-text-centered pb-6"><?php echo "<strong>Usuario creado:</strong> ".date("d-m-Y  h:i:s A",strtotime($datos['usuario_creado']))." &nbsp; <strong>Usuario actualizado:</strong> ".date("d-m-Y  h:i:s A",strtotime($datos['usuario_actualizado'])); ?></p>
 
-	<form class="formularioAjax" id="formFallas"  >
-	<!-- <form class="formFallas" action="<?php echo APP_URL; ?>app/ajax/usuarioAjax.php" method="POST" autocomplete="off" > -->
+	<!-- <form class="formularioAjax" id="formFallas" > -->
+	<form class="FormularioAjax" action="<?php echo APP_URL; ?>app/ajax/usuarioAjax.php" method="POST" autocomplete="off" id="formFallas" enctype="multipart/form-data">
 
-		<!-- <input type="hidden" name="modulo_usuario" value="actualizar">
-		<input type="hidden" name="usuario_id" value="<?php echo $datos['usuario_id']; ?>"> -->
+		<input type="hidden" name="modulo_usuario" value="guardarFallas">
 
 		<div class="columns">
 
 			<div class="column">
 		    	<div class="control">
 					<label>Fecha de reporte</label>
-				  	<input class="input" type="datetime-local" name="fechaReporte"  >
+				  	<input class="input" type="date" name="fechaReporte"  >
 				</div>
 		  	</div>
 
@@ -54,13 +53,13 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Nombre del operador</label>
-				  	<input class="input" type="text" name="usuario_nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" value="<?php echo $datos['usuario_nombre']; ?>" required >
+				  	<input class="input" type="text" name="nombre_operador" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" value="<?php echo $datos['usuario_nombre']; ?>" required >
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
 					<label>Apellidos del operador</label>
-				  	<input class="input" type="text" name="usuario_apellido" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" value="<?php echo $datos['usuario_apellido']; ?>" required >
+				  	<input class="input" type="text" name="apellido_operador" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" value="<?php echo $datos['usuario_apellido']; ?>" required >
 				</div>
 		  	</div>
 		</div>
@@ -86,13 +85,13 @@
 		  	<div class="column">
 		    	<div class="control">
 					<label>Horas efec de trabajo de la maquina</label>
-				  	<input class="input" type="number" name="horasTrabajo" required>
+				  	<input min="1" class="input" type="number" name="horasTrabajo" required>
 				</div>
 		  	</div>
 		  	<div class="column">
 		    	<div class="control">
 					<label>Total/Hotas acomuladas</label>
-				  	<input class="input" type="number" name="horasAcomuladas" required>
+				  	<input min="1" class="input" type="number" name="horasAcomuladas" required>
 				</div>
 		  	</div>
 		</div>
@@ -2264,23 +2263,40 @@
 		<div class="inputs_file">
 			
 		
-			<div class="column content_input">
-					
-					<div class="control">
-						<label>Primera imagen</label>
-						<br>
-                  		<input id="file-upload" name="upload1" type="file" class="file"> 
-					</div>
-			</div>
-
-			<div class="column content_input">
-				
-				<div class="control">
-					<label>Segunda imagen</label>
-					<br>
-                  <input id="file-upload" name="upload2" type="file" class="file">
+			<div class="columns">
+		  	<div class="column">
+				<div class="file has-name is-boxed">
+					<label class="file-label">
+						<input class="file-input" type="file" name="foto_falla1" accept=".jpg, .png, .jpeg" >
+						<span class="file-cta">
+							<span class="file-label">
+								Seleccione una foto
+							</span>
+						</span>
+						<span class="file-name">JPG, JPEG, PNG. (MAX 5MB)</span>
+					</label>
 				</div>
-			</div>
+		  	</div>
+		</div>
+
+		<div class="columns">
+		  	<div class="column">
+				<div class="file has-name is-boxed">
+					<label class="file-label">
+						<input class="file-input" type="file" name="foto_falla2" accept=".jpg, .png, .jpeg" >
+						<span class="file-cta">
+							<span class="file-label">
+								Seleccione una foto
+							</span>
+						</span>
+						<span class="file-name">JPG, JPEG, PNG. (MAX 5MB)</span>
+					</label>
+				</div>
+		  	</div>
+		</div>
+			
+
+
 		</div>
 
 		
@@ -2300,4 +2316,3 @@
 	?>
 </div>
 
-<script src="<?php echo APP_URL; ?>app/views/js/datosForm.js" ></script> 

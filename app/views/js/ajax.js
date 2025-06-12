@@ -3,8 +3,7 @@ const formularios_ajax=document.querySelectorAll(".FormularioAjax");
 
 formularios_ajax.forEach(formularios => {
 
-    formularios.addEventListener("submit",function(e){
-        
+    formularios.addEventListener("submit",function(e){        
         e.preventDefault();
 
         Swal.fire({
@@ -56,6 +55,7 @@ function alertas_ajax(alerta){
             text: alerta.texto,
             confirmButtonText: 'Aceptar'
         });
+        location.reload();
 
     }else if(alerta.tipo=="recargar"){
 

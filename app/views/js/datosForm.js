@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
     const formulario = document.getElementById('formFallas');
 
     formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // evita el envío del formulario
+        // event.preventDefault(); // evita el envío del formulario
         console.log("click");
 
         const formData = new FormData(formulario);
@@ -25,7 +25,7 @@ window.addEventListener('load', () => {
         }
 
         console.log(datos);
-        console.log(datos.upload1);
+        // console.log(datos.upload1);
 
     });
 
