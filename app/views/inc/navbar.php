@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="navbar-brand">
         <a class="navbar-item"  href="<?php echo APP_URL; ?>dashboard/">
-        <img src="<?php echo APP_URL; ?>app/views/img/SEDEMA_CORENADR.png" alt="corendr" width="380" height="80">
+        <img src="<?php echo APP_URL; ?>app/views/img/Logo_CDMX.png" alt="corendr" width="250" height="90">
         </a>
         <div class="navbar-burger" data-target="navbarExampleTransparentExample">
             <span></span>

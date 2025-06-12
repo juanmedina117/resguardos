@@ -7,6 +7,7 @@
 
     if(isset($_POST['modulo_usuario'])){
 
+		// echo $_POST['modulo_usuario'];
 		$insUsuario = new userController();
 
 		if($_POST['modulo_usuario']=="registrar"){
@@ -27,6 +28,10 @@
 
 		if($_POST['modulo_usuario']=="actualizarFoto"){
 			echo $insUsuario->actualizarFotoUsuarioControlador();
+		}
+		
+		if($_POST['modulo_usuario']=="guardarFallas"){
+			echo $insUsuario->registrarFallasControlador();
 		}
 		
 	}else{
